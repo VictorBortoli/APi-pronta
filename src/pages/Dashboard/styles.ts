@@ -13,11 +13,13 @@ export const Title = styled.h2`
     line-heigth: 56px;
 
     margin-top: 80px;
+
+    
 `;
 
 export const Form = styled.form`
     margin-top: 40px;
-    max-width: 650px;
+    max-width: 700px;
 
     display: flex;
 
@@ -26,7 +28,7 @@ export const Form = styled.form`
         height: 45px;
         padding: 0 24px;
         border: 2px solid #fff;
-        border-radius: 8px 0 0 8px; 
+        border-radius: 10px 0 0 10px; 
         color: #3a3a3a;
         border-right: 0;
 
@@ -50,5 +52,58 @@ export const Form = styled.form`
             background: ${shade(0.2,'#00ff33')}
         }
 
+    }
+`;
+
+export const Ceps = styled.div`
+    margin-top: 80px;
+    max-width: 700px;
+    
+    a{
+        background: #fff;
+        border-radius: 5px;
+        widht: 100%;
+        display: block;
+        padding: 24px;
+        text-decoration: none;
+
+        display: flex;
+        align-items: center;
+
+        transition: transform 0.2s;
+
+        &:hover {
+            transform: translate(5px);
+        }
+
+        & + a {
+            margin-top: 16px;
+
+        }
+        
+        .uf{
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background:#04d361;
+
+            padding: 23px;
+        }
+
+        div {
+            margin: 0 16px;
+            flex: 1;
+
+            strong{
+                    font-size: 20px;
+                    color: #3d3d4d;
+            }
+
+            p{
+                font-size: 18px;
+                color: #4a4948;
+                margin-top: 4px;
+            }
+        }
     }
 `;
