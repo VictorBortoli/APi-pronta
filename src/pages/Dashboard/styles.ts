@@ -2,25 +2,24 @@ import styled from 'styled-components';
 import {shade} from 'polished';
 
 export const Container = styled.div`
-    width: 80%;
+    width: 100%;
     margin: auto;
-`;
-
-export const Title = styled.h2`
-    font-size: 48px;
-    color: #3a3a3a;
-    max-width: 590px;
-    line-heigth: 56px;
-
-    margin-top: 80px;
-
     
 `;
 
-export const Form = styled.form`
-    margin-top: 40px;
-    max-width: 700px;
+export const Title = styled.h2`
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    line-heigth: 56px;
+    margin-top: 80px;
+    margin-bottom: 30px;
+`;
 
+export const Form = styled.form`
+    margin-top: 80px;
+    max-width: 500px;
+    margin: auto;
     display: flex;
 
     input {
@@ -31,79 +30,99 @@ export const Form = styled.form`
         border-radius: 10px 0 0 10px; 
         color: #3a3a3a;
         border-right: 0;
-
+        border-top: 2px solid #356abc;
+        border-bottom: 2px solid #356abc;
+        border-left: 2px solid #356abc;
         &::placeholder{
             color: #a8a8b3
         }
     }
 
     button{
-        width: 160px;
+        width: 140px;
         height: 45px;
-        background:#04d361;
+        background:#ffda42;
         border-radius: 0 5px 5px 0;
         border: 0;
-        color: #fff;
+        color: #000;
         font-weight: bold;
-
+        border-top: 2px solid #356abc;
+        border-bottom: 2px solid #356abc;
+        border-right: 2px solid #356abc;
         transition: background-color 0.2s;
 
         &:hover{
-            background: ${shade(0.2,'#00ff33')}
+            background: ${shade(0.2,'#ffcd00')}
         }
 
     }
 `;
 
-export const Ceps = styled.div`
+export const Pokes = styled.div`
     margin-top: 80px;
-    max-width: 700px;
+    width: 100%;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    flex-wrap: wrap;
     
     a{
         background: #fff;
-        border-radius: 5px;
-        widht: 100%;
-        display: block;
-        padding: 24px;
-        text-decoration: none;
-
         display: flex;
         align-items: center;
-
+        justify-content:space-between
+        border-radius: 5px;
+        border-radius:8px;
+       
+        padding: 24px;
+        text-decoration: none;
+        
+        img{
+            min-width:150px;
+            margin-left: -20px;
+        }
+        
         transition: transform 0.2s;
 
         &:hover {
             transform: translate(5px);
         }
+        margin-top: 16px;
+        margin-left: 20px;
+       
 
-        & + a {
-            margin-top: 16px;
-
-        }
         
-        .uf{
-            width: 64px;
-            height: 64px;
-            border-radius: 50%;
-            background:#04d361;
-
-            padding: 23px;
-        }
 
         div {
-            margin: 0 16px;
+            width: 150px;
+         
+            margin: 0 10px 0 -15px;
             flex: 1;
 
             strong{
                     font-size: 20px;
+                    min-width:100%;
                     color: #3d3d4d;
             }
 
             p{
-                font-size: 18px;
+                font-size: 22px;
                 color: #4a4948;
-                margin-top: 4px;
+                margin-top: 6px;
+                min-width:100%;
             }
         }
     }
+
+
 `;
+
+export const Pokediv=styled.div`
+    display:flex;
+    justify-content:center;
+    width:100%;
+    flex-direction:row;
+    flex-wrap:wrap;
+
+`; 
+
