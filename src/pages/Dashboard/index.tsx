@@ -2,9 +2,10 @@ import React, { useState, FormEvent } from "react";
 
 import api from '../../services/api';
 
-import { Container, Title, Form, Pokes, Pokediv  } from "./styles";
+import { Container, Title, Form, Pokes, Pokediv, ErrorDiv  } from "./styles";
 
 import imagem from '../../img/pokem.png';
+
 
 
 interface PokeProps{
@@ -42,24 +43,35 @@ interface PokeProps{
             }
         }
     ]
+    id:number;
 
 }
 
 const Dashboard: React.FC = () => {
     const [newPoke, setNewCep] = useState('');
     const[pokes, setCep] = useState<PokeProps[]>([]);
+    const[inputError, setInputError]= useState('');
     const pesquisarCep = async(event: FormEvent<HTMLFormElement>) =>  {
         event.preventDefault();
+
+        if(!newPoke){
+            setInputError("Digite um pokémon para pesquisar.")
+            return;
+        }
 
         try{
             const response = await api.get(`${newPoke}`);
             const cepDados = response.data;
             
             setCep([...pokes,cepDados]);
+            setNewCep('');
+            setInputError('');
+
+            
 
 
         }catch(err){
-
+            setInputError('Pokémon não encontrado.')
         }
         
     };
@@ -70,15 +82,21 @@ const Dashboard: React.FC = () => {
 
             <Form onSubmit={pesquisarCep}>
                 <input type="string" placeholder="Digite o Pokémon"
+                value={newPoke}
                     onChange={e => setNewCep(e.target.value)}
                 />
 
                 <button type= "submit">Pesquisar</button>
             </Form>
+            <ErrorDiv>
+
+            {inputError && <h1>{inputError}</h1>}
+            </ErrorDiv>
             
             <Pokes>
                 {pokes.map(poke => (
                     <a href="#" className={poke.types[0].type.name}>
+                        <p className="mar">#{poke.id}</p>
                         <img src={poke.sprites.front_default} />
                         {/* <p className="uf">{poke.}</p> */}
                         <div>

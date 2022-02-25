@@ -67,7 +67,7 @@ export const Pokes = styled.div`
     flex-wrap: wrap;
     
     a{
-        background: #fff;
+        background: #1c1c1c80;
         display: flex;
         align-items: center;
         justify-content:space-between
@@ -76,6 +76,12 @@ export const Pokes = styled.div`
        
         padding: 24px;
         text-decoration: none;
+
+        p {
+            color: #fff;
+            margin-top: -160px;
+            
+        }
         
         img{
             min-width:150px;
@@ -89,6 +95,8 @@ export const Pokes = styled.div`
         }
         margin-top: 16px;
         margin-left: 20px;
+
+        
        
 
         
@@ -102,12 +110,12 @@ export const Pokes = styled.div`
             strong{
                     font-size: 20px;
                     min-width:100%;
-                    color: #3d3d4d;
+                    color: #fff;
             }
 
             p{
                 font-size: 22px;
-                color: #4a4948;
+                color: #ffffff99;
                 margin-top: 6px;
                 min-width:100%;
             }
@@ -125,4 +133,18 @@ export const Pokediv=styled.div`
     flex-wrap:wrap;
 
 `; 
+
+export const ErrorDiv = styled.div`
+    display:flex;
+    justify-content:center;
+    text-align:center;
+
+    h1{
+        color: #cf1204;
+        font-family: Oswald, san-serif;
+        font-size: 25px;
+
+    }
+`;
+
 
