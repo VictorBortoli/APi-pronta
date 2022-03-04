@@ -15,11 +15,7 @@ interface PokeProps{
                 name: string;
             }
         },
-        {
-            ability:{
-                name: string;
-            }
-        }
+        
 
     ]
     base_experience: number;
@@ -102,7 +98,6 @@ const Dashboard: React.FC = () => {
                         <div>
                             <strong>{poke.forms[0].name.toUpperCase()}</strong>                    
                             <p>{poke.abilities[0].ability.name}</p>
-                            <p>{poke.abilities[1].ability.name}</p>
                             <p>{poke.types[0].type.name}</p>
                         </div>
                     </a>
